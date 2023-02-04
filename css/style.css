@@ -1,0 +1,118 @@
+@media screen and (max-width: 600px)  {
+    body{
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1023px)  {
+    body{
+        font-size: 24px;
+    }
+}
+ @media screen and (min-width: 1024px) {
+    body{
+        font-size: 32px;
+    }
+ }
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #333;
+    max-width: 100%;
+    color: #fff;
+}
+
+#formulario{
+    background-color: #555 ;
+    display: block;
+    position: absolute;
+    width: 70%;
+    height: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+
+#formulario h3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    margin: 0.8em;
+    text-transform: uppercase;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2em;
+    height: 70%;
+    width: 100%;
+}
+
+form input{
+    width: 90%;
+    height: 10%;
+    margin: .8em;
+}
+
+form input[type=submit]{
+    background-color: #3acf3a;
+    border-radius: 1.2rem;
+    border: none;
+    box-shadow: .2em .2em #000;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    
+}
+
+form input[type=submit]:hover{
+    background-color: #29AF29;
+}
+
+form input::placeholder{
+    padding: .2em;
+}
+
+form textarea::placeholder{
+    padding: .2em;
+}
+
+form textarea{
+    margin: 1em;
+    width: 90%;
+    height: 50%;
+}
+
+form p{
+    font-size: 0.9em;
+    color: #FF0000;
+    font-weight: bold;
+}
+
+#nightmode{
+    opacity: 0%;
+    position: fixed;
+    right: 0;
+    margin: 1em;
+    cursor: pointer;
+}
+
+#moon{
+    position: absolute;
+    right: 0;
+    margin: 0.8em;
+    font-size: 16px;
+
+}

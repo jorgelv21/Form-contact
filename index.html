@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/index.js"></script>
+    <script src="https://kit.fontawesome.com/ad55847e1c.js" crossorigin="anonymous"></script>
+    <title>Formulario de contato</title>
+</head>
+
+<body>
+    <section id="formulario">
+        <h3>Contato</h3>
+        <form method="post" autocomplete="off" id="form-api">
+            <input type="text" placeholder="Insira Seu nome" id="name" name="nome">
+            <p id="pname" hidden>Insira um nome valido</p>
+            <input type="email" id='email' placeholder="Insira seu email" name="email">
+            <p id="pemail" hidden>Insira um email valido</p>
+            <textarea placeholder="Digite sua mensagem" id="text-body" name ='mensagem'></textarea>
+            <input type="submit" value="Enviar" onclick="clicar()">
+        </form>
+    </section>
+
+        <script>
+            const formE1 = document.getElementById('form-api')
+
+            formE1.addEventListener('submit', e =>{
+                e.preventDefault();
+
+                const formData = new FormData(formE1);
+                const data = Object.fromEntries(formData)
+
+                fetch('http://127.0.0.1:8080/api/v1/messages',{
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json',
+                },
+                    body: JSON.stringify(data)
+                }).then(res => res.json())
+                .then(data => console.log(data))
+            })
+        </script>
+  
+
+
+    <i class="fa-solid fa-moon" id="moon"></i>
+        <input type="checkbox" name="night" id="nightmode" onchange="nightwindow()">
+        
+
+</body>
+
+</html>
